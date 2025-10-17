@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     outDir: 'dist',
+    chunkSizeWarningLimit: 1500, // optional, prevents chunk size warnings
     rollupOptions: {
       input: {
         main: './index.html',
