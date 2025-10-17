@@ -20,44 +20,28 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-// Use a path relative to the activity's `src/` directory so the asset is
-// resolved correctly when the activity is opened directly or when the
-// root dev server serves the activity (root -> Activity X/src/index.html).
-const matcapTexture = textureLoader.load('../static/textures/matcaps/8.png')
+const matcapTexture = textureLoader.load('/activity-1.11/textures/matcaps/8.png')
 
-/**
- * Fonts and Text
- */
 const fontLoader = new FontLoader()
-fontLoader.load(
-    // Make sure the font file path is correct (use an existing JSON font)
-    'https://threejs.org/examples/fonts/helvetiker_regular.typeface.json',
-    (font) =>
-    {
-        const textGeometry = new TextGeometry(
-            'Labyu sir',
-            {
-                font: font,
-                size: 0.5,
-                height: 0.2,
-                curveSegments: 12,
-                bevelEnabled: true,
-                bevelThickness: 0.03,
-                bevelSize: 0.02,
-                bevelOffset: 0,
-                bevelSegments: 5
-            }
-        )
+fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
+  const textGeometry = new TextGeometry('Labyu sir', {
+    font: font,
+    size: 0.5,
+    height: 0.2,
+    curveSegments: 12,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 5,
+  })
 
-        // Center the text
-        textGeometry.center()
+  textGeometry.center()
+  const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
+  const text = new THREE.Mesh(textGeometry, textMaterial)
+  scene.add(text)
+})
 
-        // Apply the matcap material
-        const textMaterial = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
-        const text = new THREE.Mesh(textGeometry, textMaterial)
-        scene.add(text)
-    }
-)
 
 /**
  * Sizes
