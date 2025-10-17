@@ -4,19 +4,11 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "public"
-      }
+      "config": { "distDir": "public" }
     }
   ],
   "routes": [
-    {
-      "src": "/activity-(?:1\\.(?:6|7|8|9|10|11|12))/(.*)",
-      "dest": "/activity-$1/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
