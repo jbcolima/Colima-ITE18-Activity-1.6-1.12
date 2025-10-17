@@ -20,7 +20,8 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('textures/matcaps/3.png')
+// Path relative to `src/` so it works when served from the activity or from root
+const matcapTexture = textureLoader.load('../static/textures/matcaps/3.png')
 
 /**
  * Fonts
@@ -28,7 +29,7 @@ const matcapTexture = textureLoader.load('textures/matcaps/3.png')
 const fontLoader = new FontLoader()
 
 fontLoader.load(
-    '/fonts/helvetiker_regular.typeface.json',
+    '../static/fonts/helvetiker_regular.typeface.json',
     (font) =>
     {
         // Material

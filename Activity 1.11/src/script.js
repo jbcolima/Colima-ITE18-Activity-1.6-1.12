@@ -20,7 +20,10 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('/textures/matcaps/8.png')
+// Use a path relative to the activity's `src/` directory so the asset is
+// resolved correctly when the activity is opened directly or when the
+// root dev server serves the activity (root -> Activity X/src/index.html).
+const matcapTexture = textureLoader.load('../static/textures/matcaps/8.png')
 
 /**
  * Fonts and Text
