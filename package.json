@@ -5,9 +5,10 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "deploy": "vercel --prod",
+    "build": "node build.js",
     "preview": "vite preview",
-    "vercel-build": "vite build"
+    "vercel-build": "node build.js"
   },
   "devDependencies": {
     "fs-extra": "^11.1.1",
