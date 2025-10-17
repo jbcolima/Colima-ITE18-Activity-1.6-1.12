@@ -23,7 +23,7 @@ const textureLoader = new THREE.TextureLoader()
 const matcapTexture = textureLoader.load('/activity-1.11/textures/matcaps/8.png')
 
 const fontLoader = new FontLoader()
-fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
+fontLoader.load('/activity-1.11/fonts/helvetiker_regular.typeface.json', (font) => {
   const textGeometry = new TextGeometry('Labyu sir', {
     font: font,
     size: 0.5,
