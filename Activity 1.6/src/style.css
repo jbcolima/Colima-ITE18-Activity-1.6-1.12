@@ -1,0 +1,13 @@
+/* 1. Replace fixed canvas dimensions & 2. Use CSS to remove page margins and make the canvas fixed */
+body {
+    margin: 0; /* Remove default page margin */
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.webgl {
+    position: fixed; /* Make the canvas fixed to the viewport */
+    top: 0;
+    left: 0;
+    /* The JavaScript code handles the width and height */
+    outline: none; /* Optional: Remove the default focus outline */
+}
